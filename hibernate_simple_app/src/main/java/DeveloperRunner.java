@@ -19,7 +19,6 @@ public class DeveloperRunner {
         DeveloperRunner developerRunner = new DeveloperRunner();
 
 
-        
         System.out.println("Adding developer's records to the DB");
 
         /**
