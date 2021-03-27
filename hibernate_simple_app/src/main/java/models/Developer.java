@@ -1,3 +1,5 @@
+package models;
+
 public class Developer {
 
     private int id;
@@ -57,7 +59,7 @@ public class Developer {
 
     @Override
     public String toString() {
-        return "Developer{" +
+        return "models.Developer{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
