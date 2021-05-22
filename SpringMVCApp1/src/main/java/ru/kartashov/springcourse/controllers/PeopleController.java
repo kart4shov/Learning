@@ -24,11 +24,13 @@ public class PeopleController {
         return "people/show";
     }
 
+
     @GetMapping("/{id}")
     public String showCertainPerson(@PathVariable("id") int id, Model model) {
         model.addAttribute("person", personDAO.index(id));
         return "people/person";
     }
+
 
     @GetMapping("/new")
     public String showCreateForm(@ModelAttribute("person") Person person) {
@@ -40,15 +42,17 @@ public class PeopleController {
                                BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             return "people/new";
-        personDAO.create(newPerson);
+        personDAO.save(newPerson);
         return "redirect:/";
     }
+
 
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
         model.addAttribute("person", personDAO.index(id));
         return "people/edit";
     }
+
 
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("person") @Valid Person person,
