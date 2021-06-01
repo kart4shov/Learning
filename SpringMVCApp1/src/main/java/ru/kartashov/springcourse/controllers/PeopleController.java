@@ -15,8 +15,12 @@ import javax.validation.Valid;
 @RequestMapping("/")
 public class PeopleController {
 
-    @Autowired
     PersonDAO personDAO;
+
+    @Autowired
+    public PeopleController(PersonDAO personDAO) {
+        this.personDAO = personDAO;
+    }
 
     @GetMapping()
     public String show(Model model) {
